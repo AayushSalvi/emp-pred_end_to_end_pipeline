@@ -25,7 +25,7 @@ def save_object(file_path, obj):
             pickle.dump(obj, file_obj)
 
     except Exception as e:
-        #raise customexception(e, sys)
+        raise customexception(e, sys)
         print(e)
     
 def evaluate_model(X_train,y_train,X_test,y_test,models):
@@ -50,8 +50,8 @@ def evaluate_model(X_train,y_train,X_test,y_test,models):
         return report
 
     except Exception as e:
-        #logging.info('Exception occured during model training')
-        #raise customexception(e,sys)
+        logging.info('Exception occured during model training')
+        raise customexception(e,sys)
         print(e)
     
 def load_object(file_path):
@@ -59,7 +59,7 @@ def load_object(file_path):
         with open(file_path,'rb') as file_obj:
             return pickle.load(file_obj)
     except Exception as e:
-        # logging.info('Exception Occured in load_object function utils')
-        # raise customexception(e,sys)
+        logging.info('Exception Occured in load_object function utils')
+        raise customexception(e,sys)
         print(e)
     
