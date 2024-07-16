@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Data_science_projects/DS_emp_pred/emp-pred_end_to_end_pipeline/mlruns/0/e4ab309ee3d241abba5a722db5ec9199/artifacts
+end_time: 1721130762041
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: e4ab309ee3d241abba5a722db5ec9199
+run_name: clean-finch-855
+run_uuid: e4ab309ee3d241abba5a722db5ec9199
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1721130756363
+status: 3
+tags: []
+user_id: salvi
