@@ -7,7 +7,7 @@ from airflow.operators.python import PythonOperator
 import sys
 sys.path.append(r"C:\Data_science_projects\DS_emp_pred\emp-pred_end_to_end_pipeline")
 
-from src.pipeline.training_pipelineAF import TrainingPipeline
+from src.pipeline.training_pipeline import TrainingPipeline
 
 training_pipeline=TrainingPipeline()
 
