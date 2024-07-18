@@ -1,0 +1,8 @@
+Metadata-Version: 2.1
+Name: gemstone_pred
+Version: 0.0.1
+Author: Aayush Salvi
+Author-email: salviaayush30@gmail.com
+Requires-Dist: scikit-learn
+Requires-Dist: pandas
+Requires-Dist: numpy
