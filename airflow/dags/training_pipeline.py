@@ -16,13 +16,15 @@ with DAG(
     default_args={"retries": 2},
     description="it is my training pipeline",
     schedule="@weekly",# here you can test based on hour or mints but make sure here you container is up and running
-    start_date=pendulum.datetime(2024, 1, 17, tz="UTC"),
+    start_date=pendulum.datetime(2024, 7, 19, tz="UTC"),
     catchup=False,
     tags=["machine_learning ","classification","gemstone"],
 ) as dag:
     
     dag.doc_md = __doc__
-    
+    '''
+    xcom = cross communication pull and push 
+    '''
     def data_ingestion(**kwargs):
         ti = kwargs["ti"]
         train_data_path,test_data_path=training_pipeline.start_data_ingestion()
@@ -88,10 +90,10 @@ with DAG(
     )
     
    
-    push_data_to_s3_task = PythonOperator(
-        task_id="push_data_to_s3",
-        python_callable=push_data_to_s3
-        )
+    # push_data_to_s3_task = PythonOperator(
+    #     task_id="push_data_to_s3",
+    #     python_callable=push_data_to_s3
+    #     )
 
 
-data_ingestion_task >> data_transform_task >> model_trainer_task >> push_data_to_s3_task
+data_ingestion_task >> data_transform_task >> model_trainer_task 
